@@ -44,7 +44,7 @@ if token and 'user' not in st.session_state:
         user_info = response.json()
         st.success(f"✅ Connecté avec : {user_info['email']}")
         st.session_state['user'] = user_info['email']
-        st.page_link("pages/page_acc.py", label="Accéder au Projet 2", icon="🚀")
+       
     else:
         st.error("❌ Échec de connexion via Auth0.")
 
@@ -68,7 +68,7 @@ if method == "Nom d'utilisateur / Mot de passe":
         if user:
             st.success(f"Bienvenue {username}")
             st.session_state['user'] = username
-            st.page_link("pages/page_acc.py", label="Accéder au Projet 2", icon="🚀")
+            st.page_link("pages/cbir.py", label="Accéder au Projet 2", icon="🚀")
         else:
             st.error("❌ Identifiants invalides.")
 
@@ -88,7 +88,7 @@ elif method == "Reconnaissance faciale":
                 if user_found:
                     st.success(f"Bienvenue {user_found}")
                     st.session_state['user'] = user_found
-                    st.page_link("pages/page_acc.py", label="Accéder au Projet 2", icon="🚀")
+                    st.page_link("pages/cbir.py", label="Accéder au Projet 2", icon="🚀")
                 else:
                     st.warning("❌ Visage non reconnu.")
             else:
@@ -109,7 +109,7 @@ elif method == "Connexion via Google/Facebook":
 
     if 'user' in st.session_state:
         st.success(f"✅ Déjà connecté en tant que {st.session_state['user']}")
-        st.page_link("pages/page_acc.py", label="Accéder au Projet 2", icon="🚀")
+        st.page_link("pages/cbir.py", label="Accéder au Projet 2", icon="🚀")
 
 #  Déconnexion
 if 'user' in st.session_state:

@@ -1,7 +1,9 @@
 streamlit
-face_recognition
 opencv-python
-deepface
 numpy
-cmake
-dlib
+pillow
+requests
+mahotas
+face_recognition
+deepface
+scikit-image   # Pour GLCM

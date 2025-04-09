@@ -36,7 +36,7 @@ def login_user(username, password):
     conn.close()
     return user
 
-def match_face(current_desc, threshold=0.7):
+def match_face(current_desc, threshold=0.3):
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute("SELECT username, face_descriptor FROM utilisateurs WHERE face_descriptor IS NOT NULL")
